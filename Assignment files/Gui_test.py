@@ -8,7 +8,8 @@ class MainApplication():
         self.master = master
         self.frame = tk.Frame(self.master)
         self.setupApplication()
-        
+        self.importantInfo = [(1, 'Data', 'MoreData'), 
+                            (2, "data", 'More data')]
         
 
     def setupApplication(self):
@@ -41,20 +42,35 @@ class MainApplication():
         self.Suburb = tk.Entry(self.SearchBar)
         self.Suburb.grid(column=4, row=2, padx = 5, pady = 5)
 
-        self.KeywordLabel = tk.Label(self.SearchBar, text ='Suburb')
+        self.KeywordLabel = tk.Label(self.SearchBar, text ='keyword')
         self.KeywordLabel.grid(column=5, row=1)
         self.Keyword = tk.Entry(self.SearchBar)
         self.Keyword.grid(column=5, row=2, padx = 5, pady = 5)
+
+    def updateTable(self):
+        rows = len(self.importantInfo)
+        columns = len(self.importantInfo[0])
+        for i in range(rows):
+            for j in range (columns):
+
+                self.Table = tk.Entry(self.ResultsTableFrame, width=20, fg='blue',
+                               font=('Arial',16,'bold'))
+                  
+                self.Table.grid(row=i, column=j)
+                self.Table.insert(tk.END, self.importantInfo[i][j])
+
         
     def set_Date1(self):
         date = self.DateBox1.get()
         return date
 
     def set_Date2(self):
-        print("kkk")
+        date = self.DateBox1.get()
+        return date
 
     def OnSearchPress(self):
         date1 = self.set_Date1()
+        self.updateTable()
         print("Search")
         print("date:", date1)
 
