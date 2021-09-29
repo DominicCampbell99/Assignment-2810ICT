@@ -20,6 +20,6 @@ class Subs:
 
         return searchResults
 
-key = Subs('neighbourhoods_dec18.csv')
+key = Subs('C:\\Users\\domca\\Desktop\\gitfucked\\neighbourhoods.dec_18')
 suburbs = key.get_suburbs()
 print(suburbs)

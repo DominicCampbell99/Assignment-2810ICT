@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#
+.need\to go\deeper\neighbourhoods_dec18.csv
