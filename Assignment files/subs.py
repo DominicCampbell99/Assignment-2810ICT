@@ -19,3 +19,7 @@ class Subs:
             searchResults.append(Neighbourhood)
 
         return searchResults
+
+key = Subs('neighbourhoods_dec18.csv')
+suburbs = key.get_suburbs()
+print(suburbs)

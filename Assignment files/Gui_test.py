@@ -86,9 +86,8 @@ class MainApplication():
         self.SuburbLabel = tk.Label(self.InputFrame, text='Suburb')
         self.SuburbLabel.grid(column=4, row=1)
 
-        self.key = subs.Subs('..\\Assignment files\\neighbourhoods_dec18.csv')
-
-        self.suburbs = ['Sydney'] #self.key.get_suburbs()
+        subss = subs.Subs('..\\Assignment files\\neighbourhoods_dec18.csv')
+        self.suburbs = subss.get_suburbs()
         self.SuburbCombo = ttk.Combobox(self.InputFrame, values=self.suburbs, postcommand=self.ComboClick)
         self.SuburbCombo.grid(column=4, row=2, padx=5, pady=5)
 
